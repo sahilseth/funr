@@ -95,7 +95,7 @@ funr devtools::build
 > automatically placed in your bin, and updated when packages gets updated
 
 ```
-## a stable version
+## a stable version (submitting soon)
 install.packages("funr")
 
 
