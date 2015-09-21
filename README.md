@@ -129,9 +129,9 @@ Alternatively you may copy a shortcut to the `funr` script to any of the followi
 ## Usually Unix based systems already contain these folders in the PATH variable:
 /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin 
 
-## Assuming /usr/local/bin is already in the path variable (check using $PATH),
-## this might be a good place to install funr, so that is accesible to ALL users of 
-## the machine/server
+## Assuming /usr/local/bin is already in the path variable (check using echo $PATH),
+## this might be a good place to install funr. 
+## This would make it accesible to ALL users of the machine/server
 
 ## get path to the funr script
 Rscript -e 'system.file("scripts/funr", package="funr")' ## get the path from this command:
