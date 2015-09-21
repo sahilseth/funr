@@ -2,6 +2,7 @@ funr
 ----------------------
 
 [![Build Status](https://travis-ci.org/sahilseth/funr.svg?branch=master)](https://travis-ci.org/sahilseth/funr)
+[![cran](http://www.r-pkg.org/badges/version/funr)](http://cran.rstudio.com/web/packages/funr/index.html)
 
 
 > r fun(ction): 
@@ -98,7 +99,7 @@ funr devtools::build
 > automatically placed in your bin, and updated when packages gets updated
 
 ```
-## a stable version (submitting soon)
+## a stable version
 install.packages("funr")
 
 

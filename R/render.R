@@ -14,7 +14,7 @@
 #'
 #' @export
 #'
-render_out <- function(x, max_rows = 100){
+render_funr <- function(x, max_rows = 100){
 
 	out = x$value
 	vis = ifelse(length(x$visible) == 0, FALSE, TRUE)
@@ -48,3 +48,6 @@ render_out <- function(x, max_rows = 100){
 		cat("")
 	}
 }
+
+
+

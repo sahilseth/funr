@@ -2,14 +2,40 @@
 
 
 
-
-#' Title
+#' funr: providing a simple command-line interface to R functions
 #'
-#' @param args Should always be: \code{commandArgs(trailingOnly = TRUE)}
-#' @param help_text A simple text to be displayed describing options and usage of this interface
+#' @description
+#' Wraps Rscript in a easy to use manner, exposing all R functions from the terminal.
+#' The \href{https://github.com/sahilseth/funr}{github page} provides more details with examples,
+#' highlights and caveats.
+#'
+#' @aliases funr rfun cli
+#'
+#' @param args Should always be: \code{commandArgs(trailingOnly = TRUE)}, when used
+#' inside a script. \href{https://github.com/sahilseth/funr/blob/master/inst/scripts/funr}{Example}
+#' @param help_text A simple text to be displayed describing options and usage of this interface.
+#' Supplying this, replaces the default text.
 #' @param script_name Name of the script. This is used in the the help text. [funr]
 #'
+#'
+#' @source https://github.com/sahilseth/funr
+#'
 #' @export
+#'
+#' @examples
+#' ## show funr help
+#' ## terminal version: funr -h
+#' funr()
+#'
+#'
+#' ## show rnorm help
+#' ## terminal version: funr -h rnorm
+#' render_funr(funr(args=c("-h", "rnorm")))
+#'
+#' ## Generate a few random numbers
+#' ## terminal version: funr rnorm n=10
+#' render_funr(funr(args=c("rnorm", "n=10")))
+#'
 funr <- function(args,
 								 help_text,
 								 script_name = "funr"){
@@ -17,7 +43,12 @@ funr <- function(args,
 	##        show help if there are no arguments
 	#if(missing(help_text))
 
-	if(missing(args) | length(args) == 0){
+	if(missing(args)){
+		message(generic_help(help_text = help_text, script_name = script_name))
+		return()
+	}
+
+	if(length(args) == 0){
 		message(generic_help(help_text = help_text, script_name = script_name))
 		return()
 	}
@@ -73,7 +104,9 @@ funr <- function(args,
 		stop("\n\nwe would not find a function by this name, please check: ", func)
 
 	if(is.function(fn) & "-h" %in% script_args){
-		return(withVisible(help(func)))
+		out = withVisible(help(func))
+		class(out) = c("funr", "list")
+		return(out)
 
 	}else{
 
@@ -89,9 +122,9 @@ funr <- function(args,
 		if(length(args) == 0)
 			message("\ntry:      ", script_name, " -h ", func, "     to get more details on this function.")
 
-		return(try(withVisible(do.call(func, args = params))))
-		## should be the LAST LINE
-		#return(out)
+		out = try(withVisible(do.call(func, args = params)))
+		class(out) = c("funr", "list")
+		return(out)
 	}
 
 }

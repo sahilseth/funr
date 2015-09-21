@@ -16,5 +16,8 @@
 library(funr)
 out = funr(commandArgs(trailingOnly = TRUE))
 
+
+## Use: print(out$value), if you want the exact output
+## OR use render_funr(out), to render them in a pretty manner
 ## Render the output in a nice manner
-render_out(out)
+render_funr(out)
