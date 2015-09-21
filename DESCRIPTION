@@ -1,8 +1,8 @@
 Package: funr
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph)
+Title: Simple Utility providing Terminal Access to all R Functions
+Version: 0.0.1.9000
+Authors@R: person("Sahil", "Seth", email = "sahil.seth@me.com", role = c("aut", "cre"))
+Description: A small utility which wraps Rscript and provides access to all R functions from the shell.
 Depends: R (>= 3.2.2)
-License: What license is it under?
+License: GPL
 LazyData: true

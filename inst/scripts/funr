@@ -11,6 +11,7 @@
 ## or load default packages they use quite often
 ## for example load devtools, knitr etc.
 
+## chmod ugo+rx inst/scripts/funr
 
 library(funr)
 out = funr(commandArgs(trailingOnly = TRUE))

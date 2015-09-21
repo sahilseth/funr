@@ -6,7 +6,7 @@
 #' @export
 setup <- function(bin = "~/bin"){
 	pkg = "funr"
-	if(!file.exists(bin)) 
+	if(!file.exists(bin))
 		dir.create(bin) ## create bin, if it does not exist
 	script = file.path(bin, pkg)
 	if(!file.exists(script)){
@@ -16,7 +16,8 @@ setup <- function(bin = "~/bin"){
 	tmp <- c("A small script ", pkg, " has been copied to ", bin,
 					 ".\nConsider adding ", bin, " to your PATH variable, by running this:",
 					 "\necho 'export PATH=$PATH:", bin,"' >> ~/.bashrc",
-					 "\nAfter opening a new shell session, running ", pkg, " from the shell should work")
+					 "\nAfter opening a new shell session, and then running ", pkg, " from the shell should work.")
 	message(tmp)
-	cat(system(system.file(package = pkg, "scripts/funr"), intern = TRUE))
+	message("\n\nShowing a example ", pkg, " output: ", file.path(bin, pkg))
+	cat(system(file.path(bin, pkg), intern = TRUE))
 }

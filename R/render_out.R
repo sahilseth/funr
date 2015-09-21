@@ -4,8 +4,8 @@
 ## --- showing the output of the returned..
 
 #' Render output of functions in a print friendly format
-#' 
-#' @description 
+#'
+#' @description
 #' If the function returns with invisible, output is suppressed
 #'
 #' @param x a output from \code{funr}
@@ -15,33 +15,35 @@
 #' @export
 #'
 render_out <- function(x, max_rows = 100){
-	
+
 	out = x$value
-	if(!x$visible){
+	vis = ifelse(length(x$visible) == 0, FALSE, TRUE)
+
+	if(!vis){
 		cat("")
-	
+
 	}else if(is.data.frame(out)){
 		message("Showing the first ", max_rows, " rows of the data.frame")
-		try(knitr:::kable(head(out, max_rows)), silent = TRUE)
-		
+		try(head(out, max_rows), silent = TRUE)
+
 	}else if(class(out) == "help_files_with_topic"){
 		## print help files
 		print(out)
-		
+
 	}else if(is.null(out)){
 		## skip NULL
 		cat("")
-		
+
 	}else if(is.list(out)){
 		## print list
 		print(out)
-		
+
 	}else if(is.atomic(out)){
 		cat(out, "\n")
-		
+
 	}else if(is.function(out)){
 		print(out)
-		
+
 	}else{
 		cat("")
 	}

@@ -8,6 +8,9 @@ render_out(x, max_rows = 100)
 }
 \arguments{
 \item{x}{a output from \code{funr}}
+
+\item{max_rows}{In case output of a function is a data.frame, the number
+of rows to display.}
 }
 \description{
 If the function returns with invisible, output is suppressed
