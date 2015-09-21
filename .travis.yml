@@ -1,5 +1,7 @@
 # .travis.yml using container-based infrastructure
 
+## following: https://github.com/jtilly/R-travis-container-example
+
 # use c as catch-all language
 language: c
 

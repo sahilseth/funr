@@ -1,6 +1,9 @@
 funr
 ----------------------
 
+[![Build Status](https://travis-ci.org/sahilseth/funr.svg?branch=master)](https://travis-ci.org/sahilseth/funr)
+
+
 > r fun(ction): 
 > attempt to make a **fun** cli for R
 
