@@ -17,16 +17,16 @@ branches:
 addons:
   apt:
     sources:
-      - r-packages-precise
+    - r-packages-precise
     packages:
-      - r-base-dev
-      - r-recommended
-      - pandoc
+    - r-base-dev
+    - r-recommended
+    - pandoc
 
 # cache local R libraries directory:
 cache:
   directories:
-    - ~/Rlib
+   - ~/Rlib
 # Be strict when checking our package
 warnings_are_errors: false
 
