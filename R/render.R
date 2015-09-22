@@ -17,10 +17,12 @@
 render_funr <- function(x, max_rows = 100){
 
 	out = x$value
-	vis = ifelse(length(x$visible) == 0, FALSE, TRUE)
+	vis = ifelse(length(x$visible) == 0, FALSE, x$visible)
+
+	#message("visible status: ", vis)
 
 	if(!vis){
-		cat("")
+		return(cat(""))
 
 	}else if(is.data.frame(out)){
 		message("Showing the first ", max_rows, " rows of the data.frame")
@@ -48,6 +50,5 @@ render_funr <- function(x, max_rows = 100){
 		cat("")
 	}
 }
-
 
 

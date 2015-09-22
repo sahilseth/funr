@@ -5,9 +5,9 @@
 
 generic_help <- function(help_text, script_name = "funr"){
 	nm = script_name
-	
+
 	if(missing(help_text))
-		default_help = sprintf("
+		help_text = sprintf("
 This aims to provide an easy command-line interface to all R functions.
 
 Usage: %s [-h -v] <name of a function> <arguments to the function [<options>=<value>]>
@@ -24,7 +24,7 @@ Examples:
     %s -h rnorm
     ## generate 100 random numbers
     %s rnorm n=100
-    
+
     ## load knitr, then call knit2html to stitch a file
     %s knitr::knit2html <all other arguments>
 
@@ -34,11 +34,11 @@ Examples:
     %s knitr::knit input=$rmd
 
 ", nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm, nm)
-	
+
 # 	if(nm == "flowr")
 # 		default_help = c(default_help, flow_help())
-	
-	return(default_help)
+
+	return(help_text)
 }
 
 
