@@ -2,6 +2,8 @@
 ^\.Rproj\.user$
 
 \.travis\.yml
+.travis_bak.yml
+
 funr\.Rproj
 ^cran-comments\.md$
 NEWS.md
