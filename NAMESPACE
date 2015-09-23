@@ -3,3 +3,6 @@
 export(funr)
 export(render_funr)
 export(setup)
+importFrom(utils,head)
+importFrom(utils,help)
+importFrom(utils,str)

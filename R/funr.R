@@ -21,6 +21,7 @@
 #' @source https://github.com/sahilseth/funr
 #'
 #' @export
+#' @importFrom utils head help str
 #'
 #' @examples
 #' ## show funr help
