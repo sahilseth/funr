@@ -21,8 +21,8 @@ funr -h            Show this help
 funr -h <function> Show help for a specific function
 funr -v            Show extra verbose messages for debugging this package
 funr <func>        Find and run <function>
-funr <func> [args] Run <func> with supplied <arguments>
-funr <pkg::func>   Load the package (pkg), and then run <func>
+funr <func> [args] Run <func> with supplied [arguments]
+funr <pkg::func>   Load the package <pkg>, and then run <func>
 ```
 
 
