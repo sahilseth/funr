@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-## Copyright 2014, Sahil Seth
+## Copyright 2015, Sahil Seth
 ## licence: MIT
 ## sahil.seth@me.com
 ## A few functions to supplement those already in this package.
