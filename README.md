@@ -77,15 +77,20 @@ funr knitr::knit2html input=$rmd
 
 **Using devtools from terminal**
 
+Its it quite easy to customize the help text and load some default packages.
+
 ```
+## download custom funr script
+wget https://github.com/sahilseth/funr/raw/master/inst/scripts/devtools -O ~/bin/devtools
+
 ## installing a repo from github
-funr devtools::install_github repo="sahilseth/flowr"
+devtools install_github repo="sahilseth/flowr"
 
 ## cd into a pacakge you want to check and run
-funr devtools::check
+devtools check .
 
 ## cd into a pacakge you want to build and run
-funr devtools::build
+devtools build .
 ```
 
 ## Highlights:

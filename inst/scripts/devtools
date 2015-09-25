@@ -14,18 +14,18 @@
 ## chmod ugo+rx inst/scripts/funr
 
 dev_text="
-
-Usage: devtools function [arguments]
-  check           Check a package
+Usage: devtools <function> [arguments]
+  check           check a package
   install         install a package from source
   install_github  install a github package
   build           build a package
-Please use 'devtools -h function' to obtain further information about the usage.
 
+Please use 'devtools -h <function>' to obtain further information about the usage.
 "
 
 library(funr)
-library(devtools)
+library(devtools, quietly = TRUE, verbose = FALSE, warn.conflicts = FALSE)
+
 out = funr(commandArgs(trailingOnly = TRUE), help_text = dev_text)
 
 
