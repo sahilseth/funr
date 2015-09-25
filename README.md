@@ -91,12 +91,12 @@ funr devtools::build
 ## Highlights:
 - Fetch all named parameters of the function and supply shell arguments after converting to the correct type
 - load help files, providing easy access to R man pages.
-- Automatically load any packages and use any exported functions
+- Automatically load any package and use any of its exported functions
 
 
 ## Installation:
 
-> automatically placed in your bin, and updated when packages gets updated
+> automatically placed in your bin, and updated when the package gets updated
 
 ```
 ## a stable version
@@ -124,7 +124,7 @@ Then you would need to add `~/bin` to your PATH variable. You may do this using 
 echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
 ```
 
-Alternatively you may copy a shortcut to the `funr` script to any of the following folders on a linux/mac machine.
+Alternatively, you may copy a shortcut to the `funr` script to any of the following folders on a linux/mac machine.
 
 ```
 ## Usually Unix based systems already contain these folders in the PATH variable:
