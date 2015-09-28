@@ -17,6 +17,8 @@
 render_funr <- function(x, max_rows = 100){
 
 	out = x$value
+	if(class(out) == "try-error")
+		cat("")
 	vis = ifelse(length(x$visible) == 0, FALSE, x$visible)
 
 	#message("visible status: ", vis)
