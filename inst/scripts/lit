@@ -1,5 +1,7 @@
 #!/usr/bin/env lr
 
+## litter does not seem to get .libPaths by default.
+## ideas ?
 .libPaths("~/Rlibs")
 library(funr)
 
