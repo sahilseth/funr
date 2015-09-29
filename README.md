@@ -70,6 +70,7 @@ funr -h knitr::knit
 ```
 ## get path to an example Rmd file. Assuming we have knitr installed.
 ## Save the filename in a BASH variable rmd
+## Pipes are supported starting version 0.1.2
 funr system.file package=knitr fl=examples/knitr-minimal.Rmd | funr knitr::knit2html input=-
 ```
 
