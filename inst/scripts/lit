@@ -15,3 +15,9 @@ out = funr(argv, script_name = "litter")
 ## Use: print(out$value), if you want the exact output
 ## OR use render_funr(out), to render them in a pretty manner
 render_funr(out)
+
+
+## example with pipes !
+"
+./lit system.file package=knitr fl=examples/knitr-minimal.Rmd | ./lit -v knitr::knit2html input=-
+"
