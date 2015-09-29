@@ -64,16 +64,23 @@ funr -h knitr::knit
 ```
 ## get path to an example Rmd file. Assuming we have knitr installed.
 ## Save the filename in a BASH variable rmd
-rmd=$(funr system.file package=knitr fl=examples/knitr-minimal.Rmd)
-echo $rmd
-    /Library/Frameworks/R.framework/Versions/3.2/Resources/library/knitr
-## knit this awesome example !
-funr knitr::knit2html input=$rmd
+funr system.file package=knitr fl=examples/knitr-minimal.Rmd | funr knitr::knit2html input=-
+```
+
+```
     loading pkg: knitr
     processing file: ... knitr/examples/knitr-minimal.Rmd
     output file: knitr-minimal.md
     knitr-minimal.html
 ```
+
+<!---
+rmd=$(funr system.file package=knitr fl=examples/knitr-minimal.Rmd)
+echo $rmd
+    /Library/Frameworks/R.framework/Versions/3.2/Resources/library/knitr
+## knit this awesome example !
+funr knitr::knit2html input=$rmd
+--->
 
 **Using devtools from terminal**
 
