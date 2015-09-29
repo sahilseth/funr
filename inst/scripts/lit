@@ -1,11 +1,13 @@
-#!./r
+#!/usr/bin/env lr
 
+.libPaths("~/Rlibs")
 library(funr)
 
 ## args as a character string.
 ## litter does not seem to like this function.
-args = commandArgs(trailingOnly = TRUE) 
-out = funr(args, script_name = "litter")
+#args = commandArgs(trailingOnly = TRUE) 
+#print(argv)
+out = funr(argv, script_name = "litter")
 
 
 ## Use: print(out$value), if you want the exact output

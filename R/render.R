@@ -43,7 +43,7 @@ render_funr <- function(x, max_rows = 100){
 		print(out)
 
 	}else if(is.atomic(out)){
-		cat(out, "\n")
+		cat(out)
 
 	}else if(is.function(out)){
 		print(out)
