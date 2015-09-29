@@ -28,7 +28,7 @@ parse_params <- function(func, paramPairs, verbose = FALSE){
 
 		## check if this is stdin
 		if(value %in% c("/dev/stdin", "-"))
-			value = readLines(file("stdin"))
+			suppressWarnings({value = readLines(file("stdin"))})
 
 		if(verbose)
 			print(value)
