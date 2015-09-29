@@ -17,7 +17,7 @@ out = funr(argv, script_name = "litter")
 render_funr(out)
 
 
-## example with pipes !
+## example with pipes! (need version 0.1.2, from DRAT)
 "
 ./lit system.file package=knitr fl=examples/knitr-minimal.Rmd | ./lit -v knitr::knit2html input=-
 "
