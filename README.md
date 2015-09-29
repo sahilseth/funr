@@ -34,6 +34,9 @@ funr <pkg::func>   Load the package <pkg>, and then run <func>
 ```
 ## load help for rnorm
 funr -h rnorm
+```
+
+```
     Normal                  package:stats                  R Documentation
     The Normal Distribution
     Description:
@@ -51,6 +54,9 @@ funr rnorm n=10
 ```
 ## load help file for knitr
 funr -h knitr::knit
+```
+
+```
     knit                   package:knitr                   R Documentation
     Knit a document
     Description:
