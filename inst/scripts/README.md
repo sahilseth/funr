@@ -1,5 +1,5 @@
 
-**goal**:
+**Idea is to integrate funr into litter**:
 
 ```
 r -f system.file package=knitr fl=examples/knitr-minimal.Rmd | r -f \ 
