@@ -3,6 +3,7 @@ funr
 
 [![Build Status](https://travis-ci.org/sahilseth/funr.svg?branch=master)](https://travis-ci.org/sahilseth/funr)
 [![cran](http://www.r-pkg.org/badges/version/funr)](http://cran.rstudio.com/web/packages/funr/index.html)
+![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
 > r fun(ction): 
