@@ -1,0 +1,23 @@
+#!/usr/bin/env lr
+
+## litter does not seem to get .libPaths by default.
+## ideas ?
+.libPaths("~/Rlibs")
+library(funr)
+
+## args as a character string.
+## litter does not seem to like this function.
+#args = commandArgs(trailingOnly = TRUE) 
+#print(argv)
+out = funr(argv, script_name = "litter")
+
+
+## Use: print(out$value), if you want the exact output
+## OR use render_funr(out), to render them in a pretty manner
+render_funr(out)
+
+
+## example with pipes! (need version 0.1.2, from DRAT)
+"
+./lit system.file package=knitr fl=examples/knitr-minimal.Rmd | ./lit -v knitr::knit2html input=-
+"
