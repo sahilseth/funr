@@ -17,7 +17,7 @@
 render_funr <- function(x, max_rows = 100){
 
 	out = x$value
-	if(class(out) == "try-error")
+	if(class(out)[1] == "try-error")
 		cat("")
 	vis = ifelse(length(x$visible) == 0, FALSE, x$visible)
 
