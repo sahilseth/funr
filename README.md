@@ -113,6 +113,11 @@ devtools build .
 - load help files, providing easy access to R man pages.
 - Automatically load any package and use any of its exported functions
 
+## Updates
+This package is under active-development, 
+you may watch for changes using
+the [watch link above](https://help.github.com/articles/watching-repositories/).
+
 
 ## Installation:
 
