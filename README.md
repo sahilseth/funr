@@ -82,6 +82,40 @@ funr system.file package=knitr fl=examples/knitr-minimal.Rmd | funr knitr::knit2
     knitr-minimal.html
 ```
 
+**Adding funr to your scripts***
+
+Create a file (called norm.r), which looks like the following:
+
+```
+#!/usr/bin/env Rscript
+
+# define your functions
+norm_hist <- function(n){
+  x = rnorm(n)
+  
+  hist(x)
+}
+
+library(funr)
+out = funr(commandArgs(trailingOnly = TRUE))
+```
+
+Make sure you have the shebang like with `#!/usr/bin/env Rscript`, so that shell knows that this is a Rscript. 
+Also, add execution privilige to the script using:
+
+```
+chmod ugo+rx norm.r
+```
+
+Now, one may call the function:
+
+```
+norm.r norm_hist n=100
+
+## OR
+Rscript norm.r norm_hist n=100
+```
+
 <!---
 rmd=$(funr system.file package=knitr fl=examples/knitr-minimal.Rmd)
 echo $rmd
