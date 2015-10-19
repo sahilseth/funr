@@ -82,7 +82,7 @@ funr system.file package=knitr fl=examples/knitr-minimal.Rmd | funr knitr::knit2
     knitr-minimal.html
 ```
 
-**Adding funr to your scripts***
+**Adding funr to your scripts**
 
 Create a file (called norm.r), which looks like the following:
 
