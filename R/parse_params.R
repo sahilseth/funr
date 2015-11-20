@@ -22,6 +22,10 @@ parse_params <- function(func, paramPairs, verbose = FALSE){
 		if(verbose)
 			message("\nstarting process with: ", param)
 
+		if(!grepl("=", param))
+			stop("seems you are missing a = sign between variable and value ?")
+
+		## split using = signs
 		splt <- unlist(strsplit(param, "="));
 		nm = splt[1]
 		value = splt[2]
