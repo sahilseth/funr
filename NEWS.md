@@ -1,7 +1,7 @@
 funr 0.2.0
 ----------------------------------------------
-- some bug fixes in render_funr
 - **NEW**: added beta support to unix pipes
+- some bug fixes in render_funr
 
 funr 0.1.0
 ----------------------------------------------
