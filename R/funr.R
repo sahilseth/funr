@@ -54,7 +54,7 @@ funr <- function(args,
 		return()
 	}
 
-	##           Arguments which start with - are for this script
+	# Arguments which start with - are for this script
 	rm = grep("^-", args)
 	script_args = args[rm]
 
@@ -67,7 +67,7 @@ funr <- function(args,
 		message("script_args:"); message(script_args)
 	}
 
-	## remove these from subsequent processing
+	# remove these from subsequent processing
 	if(length(rm) > 0)
 		args = args[-rm]
 
@@ -76,9 +76,9 @@ funr <- function(args,
 		return()
 	}
 
-	##             Get name of the function
+	#      Get name of the function
 	func = args[1]
-	## all arguments to that function
+	#    all arguments to that function
 	args = args[-1]
 
 	if(verbose){
@@ -86,8 +86,17 @@ funr <- function(args,
 		message("with final args:");message(args)
 	}
 
+	args_w_missing_eq = grep("=", args, value = TRUE, invert = TRUE)
+	if(length(args_w_missing_eq) > 0){
+		message("> All args must use the format variable=value!\n",
+		 "> Please check the followings args:",
+		paste(args_w_missing_eq, collapse = "\n"),
+		"\n> A valid example would be say, 'rnorm n=100'")
+		generic_help()
+		invisible()
+	}
 
-	##           Load the required package
+	#           Load the required package
 	if(grepl("::", func)){
 		pkg <- gsub("(.?)::.*", "\\1", func)
 		cat("loading pkg:", pkg, "\n");
@@ -100,9 +109,9 @@ funr <- function(args,
 		invisible()
 	}
 
-	fn = try(get(func))
+	fn = try(get(func), silent = TRUE)
 	if(class(try(fn)) == "try-error")
-		stop("\n\nwe would not find a function by this name, please check: ", func)
+		stop("\nI could not find a function called '", func, "' name, please check.")
 
 	if(is.function(fn) & "-h" %in% script_args){
 		out = withVisible(help(func))
@@ -124,11 +133,13 @@ funr <- function(args,
 			message("\ntry:      ", script_name, " -h ", func, "     to get more details on this function.")
 
 		out = try(withVisible(do.call(func, args = params)))
+
+		if(class(out) == "try-error"){
+			stop("")
+		}
+
 		class(out) = c("funr", "list")
 		return(out)
 	}
 
 }
-
-
-

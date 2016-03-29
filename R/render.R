@@ -3,6 +3,9 @@
 
 ## --- showing the output of the returned..
 
+# if error, ultimately, die with a error
+# show a clear, clean error message
+
 #' Render output of functions in a print friendly format
 #'
 #' @description
@@ -16,10 +19,12 @@
 #'
 render_funr <- function(x, max_rows = 100){
 
-	out = x$value
+	#print(class(out))
 	if(class(out)[1] == "try-error")
 		cat("")
-	vis = ifelse(length(x$visible) == 0, FALSE, x$visible)
+
+		out = try(x$value, silent = TRUE)
+		vis = ifelse(length(x$visible) == 0, FALSE, x$visible)
 
 	#message("visible status: ", vis)
 
@@ -52,5 +57,3 @@ render_funr <- function(x, max_rows = 100){
 		cat("")
 	}
 }
-
-
