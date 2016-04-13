@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @source https://github.com/molgenis/molgenis-pipelines/wiki/How-to-source-another_file.R-from-within-your-R-script
-detect_home <- function(){
+get_script_path <- function(){
   this.file = NULL
   # This file may be 'sourced'
   for (i in -(1:sys.nframe())) {
@@ -26,12 +26,20 @@ detect_home <- function(){
   res = tail(res[res != ""], 1)
 
 
-  if (0 < length(res))
-    return(tools::file_path_as_absolute(dirname(res)))
+  if (length(res) > 0){
+    res = tools::file_path_as_absolute(dirname(res))
+    .home <<- res
+    return(res)
+  }
+
 
   # Both are not the case. Maybe we are in an R GUI?
   return(NULL)
 }
+
+
+#' @export
+detect_home=get_script_path
 
 # # this dynamically detects path to the script
 # ultraseq_home = detect_home()
