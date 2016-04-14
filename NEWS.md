@@ -1,3 +1,7 @@
+funr 0.3.0
+----------------------------------------------
+- **NEW**: A new function, to detect the path, where R script resides.
+
 funr 0.2.0
 ----------------------------------------------
 - **NEW**: added beta support to unix pipes
