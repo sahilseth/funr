@@ -1,7 +1,6 @@
 .Rproj.user
 .Rhistory
 .RData
-
 inst/scripts/.DS_Store
-
 inst/.DS_Store
+.DS_Store
