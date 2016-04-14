@@ -1,6 +1,7 @@
 funr 0.3.0
 ----------------------------------------------
 - **NEW**: A new function, to detect the path, where R script resides.
+- better error messages in case of failures
 
 funr 0.2.0
 ----------------------------------------------

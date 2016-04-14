@@ -10,5 +10,6 @@ Imports:
     utils
 URL: https://github.com/sahilseth/funr
 BugReports: https://github.com/sahilseth/funr/issues
-RoxygenNote: 5.0.1.9000
-Suggests: testthat
+RoxygenNote: 5.0.1
+Suggests:
+    testthat
