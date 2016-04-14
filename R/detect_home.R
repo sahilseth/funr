@@ -37,7 +37,7 @@ get_script_path <- function(){
   return(NULL)
 }
 
-
+#' @rdname  get_script_path
 #' @export
 detect_home=get_script_path
 
