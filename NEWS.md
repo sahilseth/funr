@@ -1,6 +1,8 @@
 funr 0.3.0
 ----------------------------------------------
 - **NEW**: A new function, to detect the path, where R script resides.
+  This is similar to `$0` in bash scripting. 
+  This functionality is missing in R
 - better error messages in case of failures
 
 funr 0.2.0

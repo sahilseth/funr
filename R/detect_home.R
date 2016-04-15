@@ -1,10 +1,13 @@
-
+utils::globalVariables(c(".home"))
+utils::suppressForeignCheck(".home")
 
 #' Enables detection of the folder a script resides in with certain accuracy
 #'
 #' R does not have a default way to return and use, the location of a specific script.
 #'
 #' @export
+#'
+#' @importFrom utils tail
 #'
 #' @source https://github.com/molgenis/molgenis-pipelines/wiki/How-to-source-another_file.R-from-within-your-R-script
 get_script_path <- function(){
@@ -28,7 +31,9 @@ get_script_path <- function(){
 
   if (length(res) > 0){
     res = tools::file_path_as_absolute(dirname(res))
-    .home <<- res
+    #assign(.home, res, envir = .GlobalEnv)
+    #.home <<- res
+
     return(res)
   }
 
