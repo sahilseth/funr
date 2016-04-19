@@ -200,3 +200,42 @@ Rscript -e 'system.file("scripts/funr", package="funr")' ## get the path from th
 ## create a shortcut to the scruot
 ln -s /Library/Frameworks/R.framework/Versions/3.2/Resources/library/funr/scripts/funr /usr/local/bin/
 ```
+
+
+**Known issues**
+
+There are some R functions which may not work as expected. `funr` relies on function definition to define the class of the argument.
+
+For example:
+
+```
+# this works:
+funr rnorm n=10
+1.587102 -1.253751 -0.4596719 0.2898939 -0.4753329 0.3844815 -0.1046332 0.9522762 -0.5759622 -0.3915666
+# this fails:
+funr dnorm x=10
+  Non-numeric argument to mathematical function
+  
+# funr detects class of arguments as follows:
+class(formals(dnorm)$x)
+[1] "name"
+
+# class name is assumed to be character
+> rnorm(as.character(10))
+ [1]  0.65978518 -0.66257950  0.24115480  0.12273002  0.54437116 -0.09819071 -0.32314005 -0.46460737 -2.33942355 -0.26681752
+> dnorm(as.character(10))
+Error in dnorm(as.character(10)) : 
+  Non-numeric argument to mathematical function  
+```
+
+
+Currently there is no work around this.
+
+<!---
+class(formals(dnorm)$x)
+[1] "name"
+
+class(formals(rnorm)$n)
+[1] "name"
+--->
+
