@@ -1,5 +1,5 @@
 utils::globalVariables(c(".home"))
-utils::suppressForeignCheck(".home")
+try(utils::suppressForeignCheck(".home"))
 
 #' Enables detection of the folder a script resides in with certain accuracy
 #'

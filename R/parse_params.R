@@ -7,7 +7,7 @@ parse_params <- function(func, paramPairs, verbose = FALSE){
 	args <- formals(func)
 	paramPairs <- paramPairs[grep("=", paramPairs)] ## get those with =
 
-	if(verbose){message("args:");print(args)}
+	if(verbose){ message("args:");print(args) }
 
 	#print("paramPairs:");print(paramPairs)
 	#args_supplied = sapply(strsplit(paramPairs, "="), "[[", 1)
@@ -44,7 +44,7 @@ parse_params <- function(func, paramPairs, verbose = FALSE){
 			## -- remove the dots argument
 			if(verbose)
 				message("Adding ", nm, ":", value)
-			l = list(nm = value);names(l) = nm
+			l = list(nm = value); names(l) = nm
 			args <- c(args, l)
 		}
 
