@@ -2,10 +2,11 @@ Package: funr
 Title: Simple Utility Providing Terminal Access to all R Functions
 Description: A small utility which wraps Rscript and provides access to all R
     functions from the shell.
-Version: 0.3.3
+Version: 0.3.4
 Authors@R: person("Sahil", "Seth", email = "me@sahilseth.com", role = c("aut", "cre"))
 License: MIT + file LICENSE
 LazyData: true
+Depends:  R (>= 3.1.0)
 Imports:
     utils
 URL: https://github.com/sahilseth/funr
