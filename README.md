@@ -129,7 +129,7 @@ funr knitr::knit2html input=$rmd
 
 **Using devtools from terminal**
 
-Building up on the example above, we can wrap an entire R package, and use help text to show a few example.
+Building up on the example above, we can wrap an entire R package, and use help text to show a few examples.
 
 Here is an example, for wrapping devtools:
 https://github.com/sahilseth/funr/blob/master/inst/scripts/devtools
