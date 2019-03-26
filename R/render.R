@@ -31,6 +31,13 @@ render_funr <- function(x, max_rows = 100){
   if(!vis){
     return(cat(""))
 
+    # if list and size is greater than 200KB, save the results as an RDS file
+    # saved in the cwd as funr_results.rds
+  }else if(is.list(out) & (object.size(out)/1024) > 200){
+    message("This seems like a large list object. Saving results as rds file funr_results.rds")
+    write_rds(out, "funr_results.rds")
+    # try(head(out, max_rows), silent = TRUE)
+
   }else if(is.data.frame(out)){
     message("Showing the first ", max_rows, " rows of the data.frame")
     try(head(out, max_rows), silent = TRUE)
