@@ -51,7 +51,7 @@ funr rnorm n=10
 
 
 **Using a non-base package**
-*Loading a package automatically by `::`*
+*Load a package automatically by `::`*
 
 ```
 ## load help file for knitr
@@ -70,9 +70,8 @@ funr -h knitr::knit
 **Knit a HTML file using a example R markdown input from knitr package:**
 
 ```
-## get path to an example Rmd file. Assuming we have knitr installed.
-## Save the filename in a BASH variable rmd
-## Pipes are supported starting version 0.1.2
+## get path to an example Rmd file (assuming you have knitr installed).
+## pipe the file path, to a subsequent funr command (for version >0.1.2)
 funr system.file package=knitr fl=examples/knitr-minimal.Rmd | funr knitr::knit2html input=-
 ```
 
@@ -85,7 +84,7 @@ funr system.file package=knitr fl=examples/knitr-minimal.Rmd | funr knitr::knit2
 
 **Adding funr to your scripts**
 
-Create a file (called norm.r), which looks like the following:
+For example, create a file (`norm.r`), similat to the following.
 
 ```
 #!/usr/bin/env Rscript
@@ -101,8 +100,10 @@ library(funr)
 out = funr(commandArgs(trailingOnly = TRUE))
 ```
 
-Make sure you have the shebang like with `#!/usr/bin/env Rscript`, so that shell knows that this is a Rscript. 
-Also, add execution privilige to the script using:
+Basic components include 1) shebang line (`#!/usr/bin/env Rscript`), so that shell knows that this is a Rscript, 2) 
+definition of the function you would like to call 3) passing cmd arguments to `funr`.
+
+Following this, add execution privilige to the script using:
 
 ```
 chmod ugo+rx norm.r
@@ -113,7 +114,7 @@ Now, one may call the function:
 ```
 norm.r norm_hist n=100
 
-## OR
+# OR (is you prefer)
 Rscript norm.r norm_hist n=100
 ```
 
@@ -125,9 +126,13 @@ echo $rmd
 funr knitr::knit2html input=$rmd
 --->
 
+
 **Using devtools from terminal**
 
-Its it quite easy to customize the help text and load some default packages.
+Building up on the example above, we can wrap an entire R package, and use help text to show a few examples.
+
+Here is an example, for wrapping devtools:
+https://github.com/sahilseth/funr/blob/master/inst/scripts/devtools
 
 ```
 ## download custom funr script
@@ -143,10 +148,17 @@ devtools check .
 devtools build .
 ```
 
+Along the same lines here is another example for package `flowr`:
+https://github.com/sahilseth/flowr/blob/master/inst/scripts/flowr
+
+
+
 ## Highlights:
-- Fetch all named parameters of the function and supply shell arguments after converting to the correct type
-- load help files, providing easy access to R man pages.
-- Automatically load any package and use any of its exported functions
+- Fetch all named parameters of the function and supply shell arguments after converting to the correct type.
+    - detects argument type from the function call
+        - convert to 1. logical, 2. integer or 3. numeric etc.
+- load help files, providing easy access to R man pages (using `-h`).
+- Automatically load any package and use any of its exported functions (via `funr pkg::func`)
 
 ## Updates
 This package is under active-development, 
