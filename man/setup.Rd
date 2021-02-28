@@ -15,4 +15,3 @@ Setup and initialize some scripts.
 \details{
 Will add more to this to identify cluster and aid in other things
 }
-

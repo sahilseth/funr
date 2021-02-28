@@ -15,4 +15,3 @@ of rows to display.}
 \description{
 If the function returns with invisible, output is suppressed
 }
-

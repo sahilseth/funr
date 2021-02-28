@@ -23,4 +23,3 @@ Get path of current script
 
 }
 }
-
